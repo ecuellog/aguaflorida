@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import 'bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+	ngOnInit(){
+		$(window).on("load", function(){
+		  $("body").css("visibility","visible");
+		});
+	}
+
+	responsiveNavBar(){
+		console.log("hey");
+		var x = document.getElementById("topnav");
+    if (x.className === "topnav prim-color") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav prim-color";
+    }
+	}
 }
