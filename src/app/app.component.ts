@@ -16,7 +16,6 @@ export class AppComponent {
 	}
 
 	responsiveNavBar(){
-		console.log("hey");
 		var x = document.getElementById("topnav");
     if (x.className === "topnav prim-color") {
       x.className += " responsive";

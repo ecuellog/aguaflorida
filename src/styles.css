@@ -3,6 +3,11 @@ body{
 	visibility: hidden;
 }
 
+p{
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+}
+
 .prim-color{
 	background-color: #027B97;
 }
@@ -15,6 +20,10 @@ body{
 .main-font{
 	font-family: 'Nunito', sans-serif;
 	font-size: 20px;
+}
+
+.secondary-font{
+	font-family: 'Oswald', sans-serif;
 }
 
 .topnav{
