@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body{
 	visibility: hidden;
+	padding-top: 61px;
+	background-image: url('/assets/images/leaf-bg.png');
+	background-repeat: repeat;
 }
 
 p{
@@ -19,11 +22,17 @@ p{
 
 .main-font{
 	font-family: 'Nunito', sans-serif;
-	font-size: 20px;
 }
 
 .secondary-font{
 	font-family: 'Oswald', sans-serif;
+}
+
+#topnav{
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	width: 100%;
 }
 
 .topnav{
@@ -84,4 +93,14 @@ p{
     display: block;
     text-align: left;
   }
+}
+
+h1, h2, h3{
+	text-align: center;
+	width: 100%;
+}
+
+.text-center{
+	text-align: center;
+	width: 100%;
 }

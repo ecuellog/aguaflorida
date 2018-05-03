@@ -44,10 +44,10 @@
     transform: translate(-50%, -50%);
 }
 
-.light-grey-bg{
-	background-color: #CCDBF5;
+.carousel-item img{
+	border-radius: 10px;
 }
 
-h1, h2, h3{
-	text-align: center;
+hr{
+	width: 100%;
 }
