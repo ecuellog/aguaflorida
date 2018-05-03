@@ -114,3 +114,7 @@ h1, h2, h3{
 	border-radius: 5px;
 	margin: 5px auto 8px auto;
 }
+
+.component-separator{
+	width: 100%;
+}

@@ -5,70 +5,16 @@
     <p class="secondary-font text-center"> Chequea los proximos eventos de nuestra organizacion.</p>
   </div>
   <div class="row">
-    <div class="col-lg-4">
-      <div class="event-card domino-bg">
-        <h3 class="p-3">Partida de Domino</h3>
+    <div class="col-lg-4" *ngFor="let event of events">
+      <div class="event-card" [ngStyle]="{'background-image':'url(' + event.imgUrl + ')'}">
+        <h3 class="p-3">{{ event.title }}</h3>
         <div class="p-2">
-          <p> Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.</p>
+          <p> {{ event.description }}</p><br><br>
           <div id="date-place" class="position-bottom">
             <p> Fecha / </p>
-            <h4> Mayo 18, 2018 </h4>
+            <h4> {{ event.date }}</h4>
             <p> Lugar / </p>
-            <h4> 500 Tuscany Terrace NW </h4><br>
-          </div>
-          <div class="buttons position-bottom">
-            <button class="btn"> Detalles </button>
-            <button class="btn"> Ver en calendario </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="event-card domino-bg">
-        <h3 class="p-3">Partida de Domino</h3>
-        <div class="p-2">
-          <p> Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.</p><br><br>
-          <div id="date-place" class="position-bottom">
-            <p> Fecha / </p>
-            <h4> Mayo 18, 2018 </h4>
-            <p> Lugar / </p>
-            <h4> 500 Tuscany Terrace NW </h4><br>
-          </div>
-          <div class="buttons position-bottom">
-            <button class="btn"> Detalles </button>
-            <button class="btn"> Ver en calendario </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="event-card domino-bg">
-        <h3 class="p-3">Partida de Domino</h3>
-        <div class="p-2">
-          <p> Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.</p><br><br>
-          <div id="date-place" class="position-bottom">
-            <p> Fecha / </p>
-            <h4> Mayo 18, 2018 </h4>
-            <p> Lugar / </p>
-            <h4> 500 Tuscany Terrace NW </h4><br>
-          </div>
-          <div class="buttons position-bottom">
-            <button class="btn"> Detalles </button>
-            <button class="btn"> Ver en calendario </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="event-card domino-bg">
-        <h3 class="p-3">Partida de Domino</h3>
-        <div class="p-2">
-          <p> Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.</p><br><br>
-          <div id="date-place" class="position-bottom">
-            <p> Fecha / </p>
-            <h4> Mayo 18, 2018 </h4>
-            <p> Lugar / </p>
-            <h4> 500 Tuscany Terrace NW </h4><br>
+            <h4> {{ event.place }} </h4><br>
           </div>
           <div class="buttons position-bottom">
             <button class="btn"> Detalles </button>
