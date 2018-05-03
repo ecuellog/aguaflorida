@@ -104,3 +104,13 @@ h1, h2, h3{
 	text-align: center;
 	width: 100%;
 }
+
+
+.title-separator{
+	width: 40px;
+	color: #CB0060;
+	background-color: #CB0060;
+	height: 5px;
+	border-radius: 5px;
+	margin: 5px auto 8px auto;
+}

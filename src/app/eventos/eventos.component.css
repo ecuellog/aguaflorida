@@ -1,8 +1,9 @@
 .event-card{
 	margin: 20px;
-	height: auto;
+	height: 460px;
 	box-shadow: 8px 8px 10px grey;
 	background-size: cover;
+	position: relative;
 }
 
 h3{
@@ -29,8 +30,19 @@ button{
 	display: block;
 	width: 246px;
 	margin: 0 auto;
+	transform: translateX(-50%);
+	bottom: 10px;
+	left: 50%;
 }
 
 .domino-bg{
 	background-image: url('/assets/images/domino.jpg');
+}
+
+.position-bottom{
+	position: absolute;
+}
+
+#date-place{
+	bottom: 40px;
 }
