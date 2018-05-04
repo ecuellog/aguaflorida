@@ -118,3 +118,36 @@ h1, h2, h3{
 .component-separator{
 	width: 100%;
 }
+
+.footer{
+	background-color: #536267;
+	width: 100%;
+	z-index: 99;
+}
+
+.footer p {
+	color: white;
+	font-size: 14px;
+	font-style: italic;
+	margin-top: 3px;
+	margin-bottom: 0;
+}
+
+.footer i {
+	font-size: 14px;
+}
+
+.footer a {
+	color: white;
+	text-decoration: none;
+}
+
+.footer .col-md-4 {
+	padding-top: 30px;
+}
+
+.footer-af-icon{
+	padding: 0 10px 0 0;
+	height: 29px;
+	transform: translateY(-3px);
+}

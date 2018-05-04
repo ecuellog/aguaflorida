@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+	visibility: hidden;
+	padding-top: 61px;
+	background-image: url('/assets/images/leaf-bg.png');
+	background-repeat: repeat;
+}
+
+p{
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+}
+
+.prim-color{
+	background-color: #027B97;
+}
+
+.logo-font{
+	font-family: 'Parisienne', cursive;
+	font-size: 24px !important;
+}
+
+.main-font{
+	font-family: 'Nunito', sans-serif;
+}
+
+.secondary-font{
+	font-family: 'Oswald', sans-serif;
+}
+
+#topnav{
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	width: 100%;
+}
+
+.topnav{
+	color: white;
+	overflow: hidden;
+}
+
+.topnav a {
+	float:right;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 18px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a img {
+	padding: 0 10px 0 0;
+	height: 29px;
+	transform: translateY(-3px);
+}
+
+.topnav .brand {
+	padding: 15px 16px 9px 16px;
+}
+
+.topnav .brand:hover{
+	background-color: #027B97;
+}
+
+.topnav .icon{
+	display: none;
+}
+
+.topnav a:hover{
+	background-color: #CB0060;
+}
+
+@media screen and (max-width: 800px){
+	.topnav a:not(:first-child){
+		display: none;
+	}
+  .topnav a.icon {
+  	float: right;
+  	display: block;
+  }
+  .topnav.responsive {
+  	position: relative;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none !important;
+    display: block;
+    text-align: left;
+  }
+}
+
+h1, h2, h3{
+	text-align: center;
+	width: 100%;
+}
+
+.text-center{
+	text-align: center;
+	width: 100%;
+}
+
+
+.title-separator{
+	width: 40px;
+	color: #CB0060;
+	background-color: #CB0060;
+	height: 5px;
+	border-radius: 5px;
+	margin: 5px auto 8px auto;
+}
+
+.component-separator{
+	width: 100%;
+}

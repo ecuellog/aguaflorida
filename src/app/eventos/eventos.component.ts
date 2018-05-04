@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './eventos.component.html',
   styleUrls: ['./eventos.component.css']
 })
-export class EventosComponent implements OnInit {
+export class EventosComponent {
 
   constructor() { }
 
@@ -18,7 +18,7 @@ export class EventosComponent implements OnInit {
   		'date': 'Mayo 18, 2018',
   		'place': '500 Tuscany Terrace NW',
   		'imgUrl': '/assets/images/domino.jpg'
-  	}
+  	},
   	{
   		'title': 'Noche de Bingo',
   		'description': 'Diviertete con un buen juego de bingo',
