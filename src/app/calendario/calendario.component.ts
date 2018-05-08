@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import * as constants from '../constants';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import * as constants from '../shared/constants';
+import { allEvents } from '../shared/events';
 import * as $ from 'jquery';
 
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
-  styleUrls: ['./calendario.component.css']
+  styleUrls: ['./calendario.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class CalendarioComponent implements OnInit {
@@ -28,6 +30,7 @@ export class CalendarioComponent implements OnInit {
 
   ngOnInit() {
   	this.generateCalendar(this.today);
+  	this.addEvents();
   }
 
   generateCalendar(date){
@@ -35,14 +38,22 @@ export class CalendarioComponent implements OnInit {
   	var shift = this.getFirstWeekday(date);
   	$('#days').html('');
   	for(var i = 0; i < shift; i++){
-  		$('#days').append('<li _ngcontent-c1></li>');
+  		$('#days').append('<li _ngcontent-c1 class="empty-day"></li>');
   	}
   	for(var i = 1; i <= days; i++){
-  		$('#days').append('<li _ngcontent-c1>' + i + '</li>');
+  		date.setDate(i);
+  		$('#days').append(
+  			'<li _ngcontent-c1>' + 
+  				'<p _ngcontent-c1 class="weekday">' + constants.dayNames[date.getDay()] + '</p>' +
+  				'<p _ngcontent-c1 class="day">' + i + '</p>' +
+  				'<div _ngcontent-c1 class="events day' + i + ' month' + date.getMonth() + ' year' + date.getFullYear() + '"></div>' +
+  			'</li>'
+  		);
   	}
   	for(var i = 1; i <= 7 - (shift+days)%7; i++){
-  		$('#days').append('<li _ngcontent-c1></li>');
+  		$('#days').append('<li _ngcontent-c1 class="empty-day"></li>');
   	}
+  	this.today = new Date();
   }
 
   previousMonth(){
@@ -66,15 +77,25 @@ export class CalendarioComponent implements OnInit {
 		return 30;
 	}
 
-	getFirstWeekday(d) {
+	getFirstWeekday(date) {
 		var tempd = new Date();
-		tempd.setFullYear(d.getFullYear());
-		tempd.setMonth(d.getMonth());
+		tempd.setFullYear(date.getFullYear());
+		tempd.setMonth(date.getMonth());
 		tempd.setDate(1);
 		tempd.setHours(0);
 		tempd.setMinutes(0);
 		tempd.setSeconds(0);
 		return tempd.getDay();
+	}
+
+	addEvents(){
+		var events = allEvents;
+		for(let event of events){
+			$('.day' + event.date.getDate() + '.month' + event.date.getMonth() + '.year' + event.date.getFullYear()).append(
+				'<a href="#" class="event-link main-font">' + event.title + '</a>'
+			);
+		}
+		$('.day' + this.today.getDate() + '.month' + this.today.getMonth() + '.year' + this.today.getFullYear()).parent().attr('class', 'today');
 	}
 
 }

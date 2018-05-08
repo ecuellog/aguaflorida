@@ -9,10 +9,10 @@
       <div class="event-card" [ngStyle]="{'background-image':'url(' + event.imgUrl + ')'}">
         <h3 class="p-3">{{ event.title }}</h3>
         <div class="p-2">
-          <p> {{ event.description }}</p><br><br>
+          <p> {{ event.descriptionShort }}</p><br><br>
           <div id="date-place">
             <p> Fecha / </p>
-            <h4> {{ event.date }}</h4>
+            <h4> {{ event.getDateString() }}</h4>
             <p> Lugar / </p>
             <h4> {{ event.place }} </h4><br>
           </div>

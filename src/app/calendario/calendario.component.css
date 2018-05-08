@@ -17,35 +17,14 @@
 	border-right: 1px solid lightgrey;
 }
 
-#days{
-	text-align: left;
-}
-
-tr{
-	height: 20vh;
-}
-
-td{
-	border: 1px solid lightgrey;
-	width: 14%;
-	vertical-align: top;
-}
-
-h2{
-	background-color: #D98FB2;
-	color: white;
-	padding: 25px;
-	margin: 0;
-}
-
-@media(max-width: 768px){
-
-}
-
 #weekdays li{
 	display: inline-block;
 	text-align: center;
 	width: 14.2857%;
+}
+
+#days{
+	text-align: left;
 }
 
 #days li{
@@ -55,4 +34,69 @@ h2{
 	height: 15vh;
 	border: 1px solid lightgrey;
 	vertical-align: top;
+}
+
+.weekday, .day{
+	padding: 4px;
+	display: inline-block;
+	margin: 0;
+}
+
+p.weekday{
+	display: none;
+}
+
+.calendar h2{
+	background-color: #D98FB2;
+	color: white;
+	padding: 25px;
+	margin: 0;
+}
+
+.events{
+	width: 100%;
+}
+
+.event-link{
+	display: block;
+	background-color: #CB0060;
+	color: white;
+	width: 100%;
+	text-decoration: none;
+}
+
+.event-link:hover{
+	background-color: #027B97;
+	text-decoration: none;
+	color: white;
+}
+
+.today{
+	background-color: lightgrey;
+}
+
+@media(max-width: 800px){
+	.calendar{
+		width: 100%;
+	}
+
+	p.weekday{
+		display: inline-block;
+	}
+
+	.empty-day, #weekdays{
+		display: none !important;
+	}
+
+	#days li{
+		display: block;
+		width: 100%;
+		text-align: center;
+		height: auto;
+		padding-bottom: 3px;
+	}
+
+	.event-link{
+		padding: 5px;
+	}
 }
