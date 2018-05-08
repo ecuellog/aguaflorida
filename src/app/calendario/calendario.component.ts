@@ -34,8 +34,14 @@ export class CalendarioComponent implements OnInit {
   	var days = this.howManyDays(date);
   	var shift = this.getFirstWeekday(date);
   	$('#days').html('');
-  	for(var i = 0; i < days; i++){
+  	for(var i = 0; i < shift; i++){
+  		$('#days').append('<li _ngcontent-c1></li>');
+  	}
+  	for(var i = 1; i <= days; i++){
   		$('#days').append('<li _ngcontent-c1>' + i + '</li>');
+  	}
+  	for(var i = 1; i <= 7 - (shift+days)%7; i++){
+  		$('#days').append('<li _ngcontent-c1></li>');
   	}
   }
 

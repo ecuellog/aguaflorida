@@ -1,8 +1,7 @@
 .calendar{
 	background-color: white;
 	width: 90%;
-	border-left: 1px solid lightgrey;
-	border-right: 1px solid lightgrey;
+	border-bottom: 1px;
 	margin: 30px auto;
 }
 
@@ -11,6 +10,11 @@
 	width: 100%;
 	padding: 0;
 	margin: 0;
+}
+
+#weekdays{
+	border-left: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
 }
 
 #days{
@@ -50,4 +54,5 @@ h2{
 	width: 14.2857%;
 	height: 15vh;
 	border: 1px solid lightgrey;
+	vertical-align: top;
 }
