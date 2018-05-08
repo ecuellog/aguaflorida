@@ -27,6 +27,7 @@ button{
 }
 
 .buttons{
+	position: absolute;
 	display: block;
 	width: 246px;
 	margin: 0 auto;
@@ -35,14 +36,7 @@ button{
 	left: 50%;
 }
 
-.domino-bg{
-	background-image: url('/assets/images/domino.jpg');
-}
-
-.position-bottom{
-	position: absolute;
-}
-
 #date-place{
 	bottom: 40px;
+	position: absolute;
 }

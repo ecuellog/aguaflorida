@@ -1,0 +1,53 @@
+.calendar{
+	background-color: white;
+	width: 90%;
+	border-left: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
+	margin: 30px auto;
+}
+
+#weekdays, #days{
+	text-align: center;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#days{
+	text-align: left;
+}
+
+tr{
+	height: 20vh;
+}
+
+td{
+	border: 1px solid lightgrey;
+	width: 14%;
+	vertical-align: top;
+}
+
+h2{
+	background-color: #D98FB2;
+	color: white;
+	padding: 25px;
+	margin: 0;
+}
+
+@media(max-width: 768px){
+
+}
+
+#weekdays li{
+	display: inline-block;
+	text-align: center;
+	width: 14.2857%;
+}
+
+#days li{
+	display: inline-block;
+	text-align: left;
+	width: 14.2857%;
+	height: 15vh;
+	border: 1px solid lightgrey;
+}

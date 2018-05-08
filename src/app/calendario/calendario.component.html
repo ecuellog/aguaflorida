@@ -1,3 +1,16 @@
-<p>
-  calendario works!
-</p>
+<div class="container-fluid">
+  <div class="row mt-5">
+    <h1 class="secondary-font"> Calendario </h1>
+    <hr class="title-separator">
+    <p class="secondary-font text-center"> Aqui puedes ver todos los eventos en nuestro calendario, haz click en un evento para ver sus detalles. </p>
+  </div>
+  <div class="row calendar">
+    <h2 class="secondary-font">{{ displayMonth.month }} {{ displayMonth.year }}</h2>
+    <ul id="weekdays">
+      <li>Domingo</li><li>Lunes</li><li>Martes</li><li>Miercoles</li><li>Jueves</li><li>Viernes</li><li>Sabado</li>
+    </ul>
+    <ul id="days">
+
+    </ul>
+  </div>
+</div>
