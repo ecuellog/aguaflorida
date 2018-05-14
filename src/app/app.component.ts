@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { allEvents } from './shared/events';
 import * as $ from 'jquery';
 import 'bootstrap';
 
@@ -8,6 +9,7 @@ import 'bootstrap';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+	events = allEvents;
 
 	ngOnInit(){
 		$(window).on("load", function(){
@@ -22,5 +24,9 @@ export class AppComponent {
     } else {
       x.className = "topnav prim-color";
     }
+	}
+
+	closeModal(){
+		$('.modal').modal().hide();
 	}
 }

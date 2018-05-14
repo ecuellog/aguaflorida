@@ -17,7 +17,7 @@
             <h4> {{ event.place }} </h4><br>
           </div>
           <div class="buttons">
-            <button class="btn"> Detalles </button>
+            <button class="btn" data-toggle="modal" [attr.data-target]="'#event' + event.id"> Detalles </button>
             <button class="btn"> Ver el calendario </button>
           </div>
         </div>

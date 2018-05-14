@@ -120,7 +120,7 @@ export class CalendarioComponent implements OnInit {
 		var events = allEvents;
 		for(let event of events){
 			$('.day' + event.date.getDate() + '.month' + event.date.getMonth() + '.year' + event.date.getFullYear()).append(
-				'<a href="#" class="event-link main-font">' + event.title + '</a>'
+				'<a href="#" class="event-link main-font" data-toggle="modal" data-target="#event' + event.id + '">' + event.title + '</a>'
 			);
 
 			if(event.recurring != null){
@@ -128,12 +128,11 @@ export class CalendarioComponent implements OnInit {
 				for(let i = 1; i < event.recurringFor; i++){
 					recurringDate.setTime(recurringDate.getTime() + 604800000); //7days
 					$('.day' + recurringDate.getDate() + '.month' + recurringDate.getMonth() + '.year' + recurringDate.getFullYear()).append(
-						'<a href="#" class="event-link main-font">' + event.title + '</a>'
+						'<a href="#" class="event-link main-font" data-toggle="modal" data-target="#event' + event.id + '">' + event.title + '</a>'
 					);
 				}
 			}
 		}
-
 
 		//highlight today
 		$('.day' + this.today.getDate() + '.month' + this.today.getMonth() + '.year' + this.today.getFullYear()).parent().attr('class', 'today');
