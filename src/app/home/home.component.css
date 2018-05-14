@@ -73,3 +73,14 @@
 	transform: translateY(5px);
 	margin-left: 20px;
 }
+
+.subheading{
+	margin: 30px auto 0 auto;
+	text-align: center;
+}
+
+.subheading h2{
+	padding: 20px 0;
+	margin: 0;
+	display: inline;
+}

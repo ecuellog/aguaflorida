@@ -16,21 +16,14 @@ export class CalendarioComponent implements OnInit {
   }
 
   today = new Date();
-  year = this.today.getFullYear();
-  monthNumber = this.today.getMonth();
-  month = constants.monthNames[this.monthNumber].toUpperCase();
-  day = this.today.getDate();
-  weekDayNumber = this.today.getDay();
-  weekDay = constants.dayNames[this.weekDayNumber];
-
+  currDate = new Date();
   displayMonth = {
-  	year: this.year,
-  	month: this.month
+  	year: this.currDate.getFullYear(),
+  	month: constants.monthNames[this.currDate.getMonth()].toUpperCase()
   }
 
   ngOnInit() {
   	this.generateCalendar(this.today);
-  	this.addEvents();
   }
 
   generateCalendar(date){
@@ -50,31 +43,66 @@ export class CalendarioComponent implements OnInit {
   			'</li>'
   		);
   	}
-  	for(var i = 1; i <= 7 - (shift+days)%7; i++){
-  		$('#days').append('<li _ngcontent-c1 class="empty-day"></li>');
+  	if((shift+days)%7 != 0){
+	  	for(var i = 1; i <= 7 - (shift+days)%7; i++){
+	  		$('#days').append('<li _ngcontent-c1 class="empty-day"></li>');
+	  	}
   	}
+  	this.displayMonth.month = constants.monthNames[this.currDate.getMonth()].toUpperCase();
+  	this.displayMonth.year = this.currDate.getFullYear();
   	this.today = new Date();
+  	this.addEvents();
   }
 
-  previousMonth(){
-
+  prevMonth(){
+  	let prevMonth = this.currDate.getMonth();
+  	let prevYear = this.currDate.getFullYear();
+  	if(prevMonth == 0){
+  		prevMonth = 11;
+  		prevYear--;
+  	} else {
+  		prevMonth--;
+  	}
+  	this.currDate = new Date(prevYear, prevMonth, 1);
+  	this.generateCalendar(this.currDate);
   }
 
   nextMonth(){
-
+  	let nextMonth = this.currDate.getMonth();
+  	let nextYear = this.currDate.getFullYear();
+  	if(nextMonth == 11){
+  		nextMonth = 0;
+  		nextYear++;
+  	} else {
+  		nextMonth++;
+  	}
+  	this.currDate = new Date(nextYear, nextMonth, 1);
+  	this.generateCalendar(this.currDate);
   }
 
   howManyDays(date) {
 		var m = date.getMonth()+1 ;
 		if(m==1||m==3||m==5||m==7||m==8||m==10||m==12) return 31;
 		if(m==2) {
-			if(isLeapYear(d.getFullYear())) {
+			if(this.isLeapYear(date.getFullYear())) {
 				return 29
 			} else {
 				return 28
 			}
 		}
 		return 30;
+	}
+
+	isLeapYear(year) {
+		if(year%400==0) {
+			return true;
+		} else if(year%100==0) {
+			return false;
+		} else if(year%4==0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	getFirstWeekday(date) {
@@ -94,7 +122,20 @@ export class CalendarioComponent implements OnInit {
 			$('.day' + event.date.getDate() + '.month' + event.date.getMonth() + '.year' + event.date.getFullYear()).append(
 				'<a href="#" class="event-link main-font">' + event.title + '</a>'
 			);
+
+			if(event.recurring != null){
+				let recurringDate = new Date(event.date.getTime());
+				for(let i = 1; i < event.recurringFor; i++){
+					recurringDate.setTime(recurringDate.getTime() + 604800000); //7days
+					$('.day' + recurringDate.getDate() + '.month' + recurringDate.getMonth() + '.year' + recurringDate.getFullYear()).append(
+						'<a href="#" class="event-link main-font">' + event.title + '</a>'
+					);
+				}
+			}
 		}
+
+
+		//highlight today
 		$('.day' + this.today.getDate() + '.month' + this.today.getMonth() + '.year' + this.today.getFullYear()).parent().attr('class', 'today');
 	}
 

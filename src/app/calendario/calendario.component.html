@@ -5,7 +5,11 @@
     <p class="secondary-font text-center"> Aqui puedes ver todos los eventos en nuestro calendario, haz click en un evento para ver sus detalles. </p>
   </div>
   <div class="row calendar">
-    <h2 class="secondary-font">{{ displayMonth.month }} {{ displayMonth.year }}</h2>
+    <div class="calendar-heading">
+      <span (click)="prevMonth()"><i class="material-icons d-inline float-left arrow">arrow_back_ios</i></span>
+      <h2 class="secondary-font d-inline float-center">{{ displayMonth.month }} {{ displayMonth.year }}</h2>
+      <span (click)="nextMonth()"><i class="material-icons d-inline float-right arrow">arrow_forward_ios</i></span>
+    </div>
     <ul id="weekdays">
       <li>Domingo</li><li>Lunes</li><li>Martes</li><li>Miercoles</li><li>Jueves</li><li>Viernes</li><li>Sabado</li>
     </ul>

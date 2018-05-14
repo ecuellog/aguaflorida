@@ -15,6 +15,10 @@ p{
 	background-color: #027B97;
 }
 
+.text-color-pink{
+	color: #CB0060
+}
+
 .logo-font{
 	font-family: 'Parisienne', cursive;
 	font-size: 24px !important;
@@ -93,6 +97,10 @@ p{
     display: block;
     text-align: left;
   }
+
+  p{
+  	font-size: 17px;
+  }
 }
 
 h1, h2, h3{
@@ -150,4 +158,14 @@ h1, h2, h3{
 	padding: 0 10px 0 0;
 	height: 29px;
 	transform: translateY(-3px);
+}
+
+button{
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #CB0060;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	margin: 0 3px;
+	font-size: 20px;
 }

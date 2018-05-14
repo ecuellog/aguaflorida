@@ -46,11 +46,13 @@ p.weekday{
 	display: none;
 }
 
-.calendar h2{
+.calendar-heading{
 	background-color: #D98FB2;
 	color: white;
 	padding: 25px;
 	margin: 0;
+	width: 100%;
+	text-align: center;
 }
 
 .events{
@@ -99,4 +101,9 @@ p.weekday{
 	.event-link{
 		padding: 5px;
 	}
+}
+
+.arrow{
+	transform: translateY(7px);
+	cursor: pointer;
 }

@@ -5,16 +5,18 @@ class Event {
 	descriptionShort: string; //116 characters max
 	descriptionFull: string;
 	date: Date;
+	time: string;
 	place: string;
 	imgUrl: string;
 	recurring: string; //null, weekly
 	recurringFor: number; 
 
-	constructor(title: string, descriptionShort: string, descriptionFull: string, date: Date, place: string, imgUrl: string, recurring: string, recurringFor: number){
+	constructor(title: string, descriptionShort: string, descriptionFull: string, date: Date, time: string, place: string, imgUrl: string, recurring: string, recurringFor: number){
 		this.title = title;
 		this.descriptionShort = descriptionShort;
 		this.descriptionFull = descriptionFull;
 		this.date = date;
+		this.time = time;
 		this.place = place;
 		this.imgUrl = imgUrl;
 		this.recurring = recurring;
@@ -28,7 +30,7 @@ class Event {
 		}
 
 		let month = constants.monthNames[this.date.getMonth()];
-		return month + ' ' + this.date.getDate() + ' ,' + this.date.getFullYear();
+		return this.date.getDate() + ' de ' + month + ', ' + this.date.getFullYear();
 	}
 }
 
@@ -36,40 +38,15 @@ var allEvents = [];
 
 allEvents.push(
 	new Event(
-		'Partida de Domino',
-  	'Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.',
-  	'Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.',
-  	new Date(2018, 4, 15),
-  	'500 Tuscany Terrace NW',
-  	'/assets/images/domino.jpg',
-  	null,
-  	null
-	)
-);
-
-allEvents.push(
-	new Event(
-		'Noche de Bingo',
-  	'Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.',
-  	'Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.',
-  	new Date(2018, 4, 20),
-  	'500 Rocky Rd NW',
-  	'/assets/images/bingo.jpg',
-  	null,
-  	null
-	)
-);
-
-allEvents.push(
-	new Event(
-		'Bingo en Junio',
-  	'Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.',
-  	'Juega domino con otro par de viejitos. Juega domino con otro par de viejitos. Juega domino con otro par de viejitos.',
-  	new Date(2018, 5, 2),
-  	'500 Rocky Rd NW',
-  	'/assets/images/bingo.jpg',
-  	null,
-  	null
+		'Programa de computación',
+  	'Talleres para aprender a utilizar la computadora, un programa de 12 semanas empezando el 30 de mayo.',
+  	'Empieza el 30 de mayo todos los miercoles de 11am a 12:30pm en Immigration Services Calgary. Es un programa de 12 semanas y contamos con solo 14 cupos. Por favor confirmar participación al (403)669-3570 o al (403)483-1567. Programa dirigido por Gissela Vega.',
+  	new Date(2018, 4, 30),
+  	'11:00am',
+  	'Immigration Services Calgary',
+  	'/assets/images/computers.jpg',
+  	'weekly',
+  	12
 	)
 );
 
