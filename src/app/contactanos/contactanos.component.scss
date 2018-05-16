@@ -1,0 +1,59 @@
+input, textarea{
+	display: block;
+	font-family: 'Nunito', sans-serif;
+	width: 100%;
+	margin: 5px auto;
+	padding: 5px;
+}
+
+textarea{
+	height: 300px;
+}
+
+.contact-area{
+	background: linear-gradient(to bottom right, #21C5C5, #04A6CC);
+	padding: 20px;
+	border-radius: 15px;
+	border: 0px solid;
+	border-color: black;
+}
+
+.contact-info{
+	border-left: 1px solid white;
+}
+
+h4{
+	color: #536267;
+}
+
+.logo-img{
+	width: 80%;
+	display: block;
+	margin: auto;
+	padding: 20px 0 20px 15px;
+}
+
+.contact-info p, .contact-info h5{
+	color: white;
+}
+
+.submit-btn{
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #CB0060;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+}
+
+@media (max-width: 768px){
+	.contact-info{
+		border-left: 0px;
+		border-top: 1px solid white;
+		padding-top: 25px;
+	}
+
+	.form{
+		padding-bottom: 25px;
+	}
+}

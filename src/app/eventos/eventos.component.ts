@@ -5,7 +5,7 @@ import { allEvents } from '../shared/events';
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
-  styleUrls: ['./eventos.component.css']
+  styleUrls: ['./eventos.component.scss']
 })
 export class EventosComponent {
 	events = allEvents;

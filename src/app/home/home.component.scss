@@ -7,27 +7,31 @@
 }
 
 .img-holder{
-	  position: relative;
     text-align: center;
     color: white;
-}
-
-.headerbg-img{
-	z-index: -1;
+    background-image: url("/assets/images/aguafloridaSegunda.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: calc(100vh - 61px);
+    background-size: cover;
+    background-position: center;
 }
 
 .logo-img{
-	width: 40%;
-	z-index: 1;
+	width: 35%;
 }
 
 @media (min-width: 1200px){
-	.headerbg-img{
-		content: url("/assets/images/aguafloridaSegundaWS.jpg");
+	.img-holder{
+		background-image: url("/assets/images/aguafloridaSegundaWS.jpg");
 	}
 
 	.logo-img{
 		width: 20%;
+		position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 	}
 }
 
@@ -38,10 +42,84 @@
 }
 
 .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-holder a{
+	position: absolute;
+	bottom: 0px;
+	height: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+}
+
+.img-holder a i{
+	font-size: 60px;
+	color: white;
+	-webkit-animation: scroll 1s infinite;
+	-moz-animation: scroll 1s infinite;
+	-o-animation: scroll 1s infinite;
+	animation: scroll 1s infinite;
+}
+
+@-webkit-keyframes scroll{
+	0%{
+		transform: translateY(0);
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		transform: translateY(30px);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes scroll{
+	0%{
+		transform: translateY(0);
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		transform: translateY(30px);
+		opacity: 0;
+	}
+}
+
+@-o-keyframes scroll{
+	0%{
+		transform: translateY(0);
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		transform: translateY(30px);
+		opacity: 0;
+	}
+}
+
+@keyframes scroll{
+	0%{
+		transform: translateY(0);
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		transform: translateY(30px);
+		opacity: 0;
+	}
 }
 
 .carousel-item img{
@@ -49,9 +127,38 @@
 }
 
 .media-bar{
+	background-color: #536267;
 	padding: 30px 0;
 	width: 100%;
-	margin: 0 auto;
-	background-color: grey;
+}
+
+.media-bar h4{
 	color: white;
+	padding: 0;
+}
+
+.media-bar h4 a{
+	color: white;
+	text-decoration: none;
+}
+
+.mas-fotos{
+	color: #CB0060;
+	font-size: 24px;
+}
+
+.fa-facebook-square{
+	transform: translateY(5px);
+	margin-left: 20px;
+}
+
+.subheading{
+	margin: 30px auto 0 auto;
+	text-align: center;
+}
+
+.subheading h2{
+	padding: 20px 0;
+	margin: 0;
+	display: inline;
 }

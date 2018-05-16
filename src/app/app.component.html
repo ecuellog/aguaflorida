@@ -1,5 +1,5 @@
 <div id="topnav" class="topnav prim-color">
-  <a routerLink="" class="float-left brand logo-font">
+  <a routerLink="/" class="float-left brand logo-font">
     <img src="/assets/images/AguaFloridaEmpty.png">
     Agua Florida
   </a>
@@ -10,7 +10,7 @@
   <a href="javascript:void(0);" class="icon" (click)="responsiveNavBar()">&#9776;</a>
 
 </div>
-<router-outlet></router-outlet>
+<router-outlet (deactivate)="onDeactivate()"></router-outlet>
 
 <div class="footer">
   <div class="container">
@@ -43,19 +43,26 @@
 <div *ngFor="let event of events">
   <div class="modal fade" [id]="'event' + event.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
+      <div class="modal-content container">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> {{event.title}} </h5>
+          <h3 class="modal-title secondary-font text-left" id="exampleModalLabel"> {{event.title}} </h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          ...
+          <p class="mb-5"> {{ event.descriptionFull }} </p>
+          <div id="date-time-place">
+            <p> Fecha / </p>
+            <h4> {{ event.getDateString() }}</h4>
+            <p> Hora / </p>
+            <h4> {{ event.time }} </h4>
+            <p> Lugar / </p>
+            <h4> {{ event.place }} </h4>
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>

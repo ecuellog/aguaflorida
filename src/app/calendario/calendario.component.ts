@@ -6,7 +6,7 @@ import * as $ from 'jquery';
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
-  styleUrls: ['./calendario.component.css'],
+  styleUrls: ['./calendario.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 

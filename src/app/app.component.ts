@@ -29,4 +29,8 @@ export class AppComponent {
 	closeModal(){
 		$('.modal').modal().hide();
 	}
+
+	onDeactivate(){
+		document.body.scrollTop = 0;
+	}
 }

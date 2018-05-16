@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body{
 	visibility: hidden;
-	padding-top: 61px;
 	background-image: url('/assets/images/leaf-bg.png');
 	background-repeat: repeat;
+	padding-top: 61px;
 }
 
 p{
@@ -13,6 +13,10 @@ p{
 
 .prim-color{
 	background-color: #027B97;
+}
+
+.text-color-pink{
+	color: #CB0060
 }
 
 .logo-font{
@@ -33,14 +37,11 @@ p{
 	top: 0;
 	z-index: 99;
 	width: 100%;
-}
-
-.topnav{
 	color: white;
 	overflow: hidden;
 }
 
-.topnav a {
+#topnav a {
 	float:right;
 	display: block;
 	color: white;
@@ -50,48 +51,65 @@ p{
 	font-size: 17px;
 }
 
-.topnav a img {
+#topnav a img {
 	padding: 0 10px 0 0;
 	height: 29px;
 	transform: translateY(-3px);
 }
 
-.topnav .brand {
+#topnav .brand {
 	padding: 15px 16px 9px 16px;
 }
 
-.topnav .brand:hover{
+#topnav .brand:hover{
 	background-color: #027B97;
 }
 
-.topnav .icon{
+#topnav .icon{
 	display: none;
 }
 
-.topnav a:hover{
+#topnav a:hover{
 	background-color: #CB0060;
 }
 
 @media screen and (max-width: 800px){
-	.topnav a:not(:first-child){
+
+	h2{
+		font-size: 1.5rem;
+	}
+
+	h3{
+		font-size: 1.25rem;
+	}
+
+	h4{
+		font-size: 1.25rem;
+	}
+
+	#topnav a:not(:first-child){
 		display: none;
 	}
-  .topnav a.icon {
+  #topnav a.icon {
   	float: right;
   	display: block;
   }
-  .topnav.responsive {
-  	position: relative;
-  }
-  .topnav.responsive a.icon {
+  
+  #topnav.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  .topnav.responsive a {
+  #topnav.responsive a {
     float: none !important;
     display: block;
     text-align: left;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  p{
+  	font-size: 17px;
   }
 }
 
@@ -117,4 +135,47 @@ h1, h2, h3{
 
 .component-separator{
 	width: 100%;
+}
+
+.footer{
+	background-color: #536267;
+	width: 100%;
+	z-index: 99;
+}
+
+.footer p {
+	color: white;
+	font-size: 14px;
+	font-style: italic;
+	margin-top: 3px;
+	margin-bottom: 0;
+}
+
+.footer i {
+	font-size: 14px;
+}
+
+.footer a {
+	color: white;
+	text-decoration: none;
+}
+
+.footer .col-md-4 {
+	padding-top: 30px;
+}
+
+.footer-af-icon{
+	padding: 0 10px 0 0;
+	height: 29px;
+	transform: translateY(-3px);
+}
+
+button{
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #CB0060;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	margin: 0 3px;
+	font-size: 20px;
 }
