@@ -11,7 +11,7 @@ export class ContactService {
   	var headers = new HttpHeaders();
   	headers = headers.set('Content-Type','application/json');
   	params = JSON.stringify(params);
-  	return this.http.post('aguaflorida.org' + path, params, {
+  	return this.http.post(path, params, {
   		headers: headers
   	});
   }
