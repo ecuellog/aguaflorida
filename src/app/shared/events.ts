@@ -9,7 +9,7 @@ class Event {
 	time: string;
 	place: string;
 	imgUrl: string;
-	recurring: string; //null, weekly
+	recurring: string; //null, weekly, monthly, daily
 	recurringFor: number; 
 
 	constructor(id: number, title: string, descriptionShort: string, descriptionFull: string, date: Date, time: string, place: string, imgUrl: string, recurring: string, recurringFor: number){
