@@ -53,4 +53,19 @@ allEvents.push(
 	)
 );
 
+allEvents.push(
+	new Event(
+		2,
+		'Cocinar con Amigos',
+  	'Todos los jueves desde el 12 de Julio hasta el 30 de Agosto. Los interesados seran agregados a un grupo de Whatsapp donde cada Lunes se pondran de acuerdo para decidir la siguente receta.',
+  	'La receta decidida el Lunes por el grupo de Whatsapp se preparara el dia Jueves de esa semana. La voluntaria se encargara de comprar los ingredientes de la receta y de acuerdo a la cantidad de personas confirmadas. La voluntaria enviara foto del recibo a los participantes por el grupo de Whatsapp para que abonen su parte el dia Jueves (calculamos entre $5 a $10 por persona). La reunion es a las 10am, los Jueves para cocinar, almorzar y organizar la cocina. Contacta a Maria Isabel al (403)669-3570 o envianos un mensaje haciendo click en "Contactanos".',
+  	new Date(2018, 6, 12),
+  	'10:00am - 1:00pm',
+  	'Westview Baptist Church - 1313 Ranchlands Way NW, Calgary, AB, T3G2A1',
+  	'/assets/images/comida.jpg',
+  	'weekly',
+  	8
+	)
+);
+
 export {allEvents};
